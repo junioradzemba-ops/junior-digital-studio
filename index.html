@@ -2,120 +2,352 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Junior Digital Studio</title>
-<style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6fb;
-  color: #17233c;
-}
-header {
-  background: #101d38;
-  color: white;
-  padding: 25px 15px;
-  text-align: center;
-}
-header h1 { color: #42c5f5; }
-nav {
-  background: #172b50;
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 10px;
-}
-.hero {
-  text-align: center;
-  padding: 65px 20px;
-  background: linear-gradient(135deg,#101d38,#176a9b);
-  color: white;
-}
-.hero h2 { font-size: 30px; }
-.btn {
-  display: inline-block;
-  background: #18b7df;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 15px;
-}
-section {
-  padding: 35px 20px;
-  text-align: center;
-}
-.service {
-  background: white;
-  margin: 15px auto;
-  padding: 20px;
-  max-width: 450px;
-  border-radius: 12px;
-}
-footer {
-  background: #101d38;
-  color: white;
-  text-align: center;
-  padding: 25px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Junior Digital Studio : idées, création digitale, sites web, design et solutions pour les entreprises.">
+  <title>Junior Digital Studio | Vos idées prennent vie</title>
+  <style>
+    :root {
+      --navy: #101a35;
+      --blue: #4169e1;
+      --gold: #f5b942;
+      --light: #f4f7fc;
+      --text: #202a40;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: white;
+    }
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand { font-weight: 800; font-size: 1.2rem; }
+    .brand span { color: var(--gold); }
+    nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-size: .92rem; }
+    .language { padding: 7px; border-radius: 6px; }
+    .hero {
+      background: linear-gradient(135deg, #101a35, #243f82);
+      color: white;
+      padding: 76px 7%;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.15; }
+    .hero p { max-width: 700px; margin: 18px auto 26px; }
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #17203a;
+      padding: 12px 19px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+    }
+    section { padding: 48px 7%; }
+    .section-title { text-align: center; margin-bottom: 28px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .service {
+      background: var(--light);
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f3;
+    }
+    .service h3 { color: var(--navy); margin-top: 0; }
+    .ideas { background: #edf2ff; }
+    form {
+      max-width: 650px;
+      margin: auto;
+      display: grid;
+      gap: 13px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd4e4;
+      border-radius: 7px;
+      font: inherit;
+      background: white;
+    }
+    footer {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 26px 7%;
+    }
+    footer a { color: var(--gold); }
+    .note { font-size: .9rem; color: #526078; }
+    @media (max-width: 600px) {
+      header { align-items: flex-start; }
+      .hero { padding: 54px 6%; }
+      section { padding: 38px 6%; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="brand">JUNIOR <span>DIGITAL STUDIO</span></div>
+    <nav>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#idees" data-i18n="navIdeas">Nos idées</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <select class="language" id="language" aria-label="Choisir la langue">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="pt">Português</option>
+    </select>
+  </header>
 
-<header>
-<h1>JUNIOR DIGITAL STUDIO</h1>
-<p>Votre vision, notre expertise digitale.</p>
-</header>
+  <main>
+    <section class="hero">
+      <h1 data-i18n="heroTitle">Vos idées méritent de devenir réalité.</h1>
+      <p data-i18n="heroText">Nous imaginons des idées, créons des expériences digitales et aidons les projets à prendre vie.</p>
+      <a class="button" href="#contact" data-i18n="heroButton">Parlons de votre projet</a>
+    </section>
 
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+    <section id="services">
+      <div class="section-title">
+        <h2 data-i18n="servicesTitle">Nos services</h2>
+        <p data-i18n="servicesIntro">Des solutions créatives et numériques adaptées à vos besoins.</p>
+      </div>
+      <div class="grid">
+        <article class="service">
+          <h3 data-i18n="s1">🌐 Création de sites web</h3>
+          <p data-i18n="d1">Des sites vitrines modernes pour présenter votre activité en ligne.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s2">🎨 Design graphique et affiches</h3>
+          <p data-i18n="d2">Des visuels publicitaires et des créations pour communiquer efficacement.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s3">✨ Logos et identité visuelle</h3>
+          <p data-i18n="d3">Des concepts créatifs pour construire une identité de marque cohérente.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s4">📱 Communication digitale</h3>
+          <p data-i18n="d4">Des idées de contenus et des stratégies pour vos réseaux sociaux.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s5">💡 Idées de business sur mesure</h3>
+          <p data-i18n="d5">Des concepts de projets, des pistes de développement et des plans d'action adaptés à vos objectifs.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s6">🧠 Idées marketing et publicitaires</h3>
+          <p data-i18n="d6">Des slogans, noms de marque, campagnes et concepts créatifs.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s7">📚 Produits numériques</h3>
+          <p data-i18n="d7">Des guides, modèles et ressources numériques utiles aux projets.</p>
+        </article>
+        <article class="service">
+          <h3 data-i18n="s8">⚙️ Assistance numérique et IA</h3>
+          <p data-i18n="d8">Des solutions numériques et des automatisations à définir selon votre besoin.</p>
+        </article>
+      </div>
+    </section>
 
-<div class="hero" id="accueil">
-<h2>Bienvenue chez Junior Digital Studio</h2>
-<p>Nous donnons vie à vos idées grâce au numérique.</p>
-<a class="btn" href="#contact">Nous contacter</a>
-</div>
+    <section class="ideas" id="idees">
+      <div class="section-title">
+        <h2 data-i18n="ideasTitle">Une idée en tête ? Donnons-lui forme.</h2>
+        <p data-i18n="ideasText">Expliquez-nous votre projet. Nous pourrons étudier votre besoin et vous proposer une solution adaptée.</p>
+        <a class="button" href="#contact" data-i18n="ideasButton">Présenter mon idée</a>
+      </div>
+    </section>
 
-<section id="services">
-<h2>Nos services</h2>
+    <section id="contact">
+      <div class="section-title">
+        <h2 data-i18n="contactTitle">Parlons de votre projet</h2>
+        <p data-i18n="contactIntro">Remplissez le formulaire pour préparer votre demande.</p>
+      </div>
+      <form id="requestForm">
+        <label>
+          <span data-i18n="nameLabel">Votre nom</span>
+          <input name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <label>
+          <span data-i18n="emailLabel">Votre e-mail</span>
+          <input name="email" type="email" required maxlength="150" autocomplete="email">
+        </label>
+        <label>
+          <span data-i18n="serviceLabel">Service souhaité</span>
+          <select name="service" required>
+            <option value="" data-i18n="choose">Choisir un service</option>
+            <option>Création de site web</option>
+            <option>Design graphique / affiche</option>
+            <option>Logo / identité visuelle</option>
+            <option>Communication digitale</option>
+            <option>Idée de business personnalisée</option>
+            <option>Idée marketing / publicitaire</option>
+            <option>Produit numérique</option>
+            <option>Assistance numérique / IA</option>
+            <option>Autre demande</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="detailsLabel">Décrivez votre besoin</span>
+          <textarea name="details" required maxlength="3000" rows="5"></textarea>
+        </label>
+        <button class="button" type="submit" data-i18n="sendButton">Préparer ma demande WhatsApp</button>
+        <p class="note" data-i18n="formNote">Le formulaire ouvrira WhatsApp avec votre message prérempli. Votre demande ne sera pas envoyée avant votre confirmation dans WhatsApp.</p>
+        <p id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
 
-<div class="service">
-<h3>🎨 Design graphique</h3>
-<p>Création d'affiches, flyers et visuels publicitaires.</p>
-</div>
+  <footer>
+    <p><strong>Junior Digital Studio</strong> — <span data-i18n="footerText">Vos idées, nos solutions.</span></p>
+    <p>WhatsApp : <a href="https://wa.me/242066599897">+242 06 659 98 97</a></p>
+    <p>E-mail : <a href="mailto:junioradzemba@gmail.com">junioradzemba@gmail.com</a></p>
+    <p>© <span id="year"></span> Junior Digital Studio</p>
+  </footer>
 
-<div class="service">
-<h3>💻 Services numériques</h3>
-<p>Accompagnement et assistance dans vos projets digitaux.</p>
-</div>
+  <script>
+    const translations = {
+      fr: {
+        navServices:"Services", navIdeas:"Nos idées", navContact:"Contact",
+        heroTitle:"Vos idées méritent de devenir réalité.",
+        heroText:"Nous imaginons des idées, créons des expériences digitales et aidons les projets à prendre vie.",
+        heroButton:"Parlons de votre projet", servicesTitle:"Nos services",
+        servicesIntro:"Des solutions créatives et numériques adaptées à vos besoins.",
+        s1:"🌐 Création de sites web", d1:"Des sites vitrines modernes pour présenter votre activité en ligne.",
+        s2:"🎨 Design graphique et affiches", d2:"Des visuels publicitaires et des créations pour communiquer efficacement.",
+        s3:"✨ Logos et identité visuelle", d3:"Des concepts créatifs pour construire une identité de marque cohérente.",
+        s4:"📱 Communication digitale", d4:"Des idées de contenus et des stratégies pour vos réseaux sociaux.",
+        s5:"💡 Idées de business sur mesure", d5:"Des concepts de projets, des pistes de développement et des plans d'action adaptés à vos objectifs.",
+        s6:"🧠 Idées marketing et publicitaires", d6:"Des slogans, noms de marque, campagnes et concepts créatifs.",
+        s7:"📚 Produits numériques", d7:"Des guides, modèles et ressources numériques utiles aux projets.",
+        s8:"⚙️ Assistance numérique et IA", d8:"Des solutions numériques et des automatisations à définir selon votre besoin.",
+        ideasTitle:"Une idée en tête ? Donnons-lui forme.",
+        ideasText:"Expliquez-nous votre projet. Nous pourrons étudier votre besoin et vous proposer une solution adaptée.",
+        ideasButton:"Présenter mon idée", contactTitle:"Parlons de votre projet",
+        contactIntro:"Remplissez le formulaire pour préparer votre demande.",
+        nameLabel:"Votre nom", emailLabel:"Votre e-mail", serviceLabel:"Service souhaité",
+        choose:"Choisir un service", detailsLabel:"Décrivez votre besoin",
+        sendButton:"Préparer ma demande WhatsApp",
+        formNote:"Le formulaire ouvrira WhatsApp avec votre message prérempli. Votre demande ne sera pas envoyée avant votre confirmation dans WhatsApp.",
+        footerText:"Vos idées, nos solutions.", required:"Veuillez remplir tous les champs."
+      },
+      en: {
+        navServices:"Services", navIdeas:"Our ideas", navContact:"Contact",
+        heroTitle:"Your ideas deserve to become reality.",
+        heroText:"We develop ideas, create digital experiences and help projects come to life.",
+        heroButton:"Let's discuss your project", servicesTitle:"Our services",
+        servicesIntro:"Creative and digital solutions tailored to your needs.",
+        s1:"🌐 Website creation", d1:"Modern websites to present your activity online.",
+        s2:"🎨 Graphic design and posters", d2:"Advertising visuals and creative designs.",
+        s3:"✨ Logos and brand identity", d3:"Creative concepts for a consistent brand identity.",
+        s4:"📱 Digital communication", d4:"Content ideas and social media strategies.",
+        s5:"💡 Custom business ideas", d5:"Project concepts and action plans tailored to your goals.",
+        s6:"🧠 Marketing and advertising ideas", d6:"Slogans, brand names, campaigns and creative concepts.",
+        s7:"📚 Digital products", d7:"Guides, templates and useful digital resources.",
+        s8:"⚙️ Digital support and AI", d8:"Digital solutions and automation designed around your needs.",
+        ideasTitle:"Have an idea? Let's shape it.",
+        ideasText:"Tell us about your project so we can explore a suitable solution.",
+        ideasButton:"Share my idea", contactTitle:"Let's discuss your project",
+        contactIntro:"Fill in the form to prepare your request.",
+        nameLabel:"Your name", emailLabel:"Your email", serviceLabel:"Service needed",
+        choose:"Choose a service", detailsLabel:"Describe your needs",
+        sendButton:"Prepare my WhatsApp request",
+        formNote:"WhatsApp will open with your message ready. You must confirm sending it there.",
+        footerText:"Your ideas, our solutions.", required:"Please complete every field."
+      },
+      es: {
+        navServices:"Servicios", navIdeas:"Nuestras ideas", navContact:"Contacto",
+        heroTitle:"Tus ideas merecen hacerse realidad.",
+        heroText:"Creamos ideas y experiencias digitales para impulsar proyectos.",
+        heroButton:"Hablemos de tu proyecto", servicesTitle:"Nuestros servicios",
+        servicesIntro:"Soluciones creativas y digitales adaptadas a tus necesidades.",
+        s1:"🌐 Creación de sitios web", d1:"Sitios modernos para presentar tu actividad en línea.",
+        s2:"🎨 Diseño gráfico y carteles", d2:"Diseños publicitarios y visuales creativos.",
+        s3:"✨ Logotipos e identidad visual", d3:"Conceptos para una identidad de marca coherente.",
+        s4:"📱 Comunicación digital", d4:"Ideas de contenido y estrategias para redes sociales.",
+        s5:"💡 Ideas de negocio personalizadas", d5:"Conceptos de proyectos y planes adaptados a tus objetivos.",
+        s6:"🧠 Ideas de marketing y publicidad", d6:"Esloganes, nombres de marca y campañas.",
+        s7:"📚 Productos digitales", d7:"Guías, plantillas y recursos digitales.",
+        s8:"⚙️ Asistencia digital e IA", d8:"Soluciones digitales y automatización.",
+        ideasTitle:"¿Tienes una idea? Démosle forma.",
+        ideasText:"Cuéntanos tu proyecto para estudiar una solución adecuada.",
+        ideasButton:"Presentar mi idea", contactTitle:"Hablemos de tu proyecto",
+        contactIntro:"Completa el formulario para preparar tu solicitud.",
+        nameLabel:"Tu nombre", emailLabel:"Tu correo electrónico", serviceLabel:"Servicio deseado",
+        choose:"Elige un servicio", detailsLabel:"Describe tu necesidad",
+        sendButton:"Preparar mi solicitud por WhatsApp",
+        formNote:"WhatsApp se abrirá con el mensaje preparado. Debes confirmar el envío.",
+        footerText:"Tus ideas, nuestras soluciones.", required:"Completa todos los campos."
+      },
+      pt: {
+        navServices:"Serviços", navIdeas:"Nossas ideias", navContact:"Contacto",
+        heroTitle:"As suas ideias merecem tornar-se realidade.",
+        heroText:"Criamos ideias e experiências digitais para dar vida aos projetos.",
+        heroButton:"Vamos falar do seu projeto", servicesTitle:"Os nossos serviços",
+        servicesIntro:"Soluções criativas e digitais adaptadas às suas necessidades.",
+        s1:"🌐 Criação de sites", d1:"Sites modernos para apresentar a sua atividade online.",
+        s2:"🎨 Design gráfico e cartazes", d2:"Imagens publicitárias e criações visuais.",
+        s3:"✨ Logótipos e identidade visual", d3:"Conceitos para uma identidade de marca coerente.",
+        s4:"📱 Comunicação digital", d4:"Ideias de conteúdo e estratégias para redes sociais.",
+        s5:"💡 Ideias de negócio personalizadas", d5:"Conceitos e planos de ação adaptados aos seus objetivos.",
+        s6:"🧠 Ideias de marketing e publicidade", d6:"Slogans, nomes de marca e campanhas.",
+        s7:"📚 Produtos digitais", d7:"Guias, modelos e recursos digitais.",
+        s8:"⚙️ Assistência digital e IA", d8:"Soluções digitais e automação.",
+        ideasTitle:"Tem uma ideia? Vamos dar-lhe forma.",
+        ideasText:"Conte-nos o seu projeto para explorarmos uma solução adequada.",
+        ideasButton:"Apresentar a minha ideia", contactTitle:"Vamos falar do seu projeto",
+        contactIntro:"Preencha o formulário para preparar o seu pedido.",
+        nameLabel:"O seu nome", emailLabel:"O seu e-mail", serviceLabel:"Serviço pretendido",
+        choose:"Escolha um serviço", detailsLabel:"Descreva a sua necessidade",
+        sendButton:"Preparar pedido para WhatsApp",
+        formNote:"O WhatsApp abrirá com a mensagem preparada. Confirme o envio na aplicação.",
+        footerText:"As suas ideias, as nossas soluções.", required:"Preencha todos os campos."
+      }
+    };
 
-<div class="service">
-<h3>📱 Communication digitale</h3>
-<p>Création de contenus et valorisation de votre activité.</p>
-</div>
-</section>
+    const languageSelect = document.getElementById("language");
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.fr;
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) element.textContent = dictionary[key];
+      });
+    }
+    languageSelect.addEventListener("change", event => setLanguage(event.target.value));
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<section id="contact">
-<h2>Contactez-nous</h2>
-<p>Email : junioradzemba@gmail.com</p>
-<a class="btn" href="https://wa.me/242066599897">
-Nous écrire sur WhatsApp
-</a>
-</section>
-
-<footer>
-<p>© 2026 Junior Digital Studio</p>
-<p>Brazzaville – République du Congo</p>
-</footer>
-
+    document.getElementById("requestForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const lang = languageSelect.value;
+      const message = [
+        "Bonjour, Junior Digital Studio !",
+        "Nom : " + data.get("name"),
+        "E-mail : " + data.get("email"),
+        "Service : " + data.get("service"),
+        "Demande : " + data.get("details"),
+        "Langue du formulaire : " + lang
+      ].join("\n");
+      const url = "https://wa.me/242066599897?text=" + encodeURIComponent(message);
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
 </body>
-  </html>
-  
+</html>
